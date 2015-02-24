@@ -65,6 +65,11 @@ To trigger injection, and start listening for changes to preference values, you 
 PreferenceInjector.inject(this);
 ```
 
+To trigger injection on Fragments use the following method:
+```
+PreferenceInjector.inject(getActivity(), this)
+```
+
 Be sure to cancel your listeners when you no longer want updates (e.g. in your `Activity`'s `onDestroy` method). You only need to do this if you have any `@OnPreferenceChange` annotations.
 ```
 PreferenceInjector.stopListening(this);
